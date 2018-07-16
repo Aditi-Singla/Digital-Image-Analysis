@@ -1,4 +1,4 @@
-# Assignment 0 - Image Scaling
+## Assignment 0 - Image Scaling
 
 The aim is to perform the scaling operation to an image. The scaling up should be done using 
 1. replication
