@@ -1,0 +1,15 @@
+function acc = accMinVertPathMap(img)
+
+    mag = rgb2gray(img);
+    [dimY,dimX] = size(mag);
+    mag = getEnergyMap(mag);
+    acc = mag;
+    
+    for y=2:dimY
+        for x=1:dimX
+            if (x == 1) acc(y,x) = mag(y,x) + min([acc(y-1,x), acc(y-1,x+1)]);
+            elseif (x == dimX) acc(y,x) = mag(y,x) + min([acc(y-1,x), acc(y-1,x-1)]);
+            else acc(y,x) = mag(y,x) + min([acc(y-1,x-1), acc(y-1,x), acc(y-1,x+1)]);
+            end;
+        end;
+    end;    
